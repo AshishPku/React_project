@@ -7,10 +7,10 @@ const data = [
 ];
 const App = () => {
   return (
-    <div>
+    <>
       <Header />
       <Card value={data} />
-    </div>
+    </>
   );
 };
 

@@ -1,12 +1,12 @@
 import React from "react";
 import img from "./../assets/images/sri-chaitnaya.jpg";
-const Card = (props) => {
+const Card = ({ value }) => {
   const len = 1;
 
   return (
     <div>
       <div className="card">
-        {props.value.map((el) => (
+        {value.map((el) => (
           <div>
             <div>{len}</div>
             <span>{el.name}</span>

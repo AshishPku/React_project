@@ -12,6 +12,9 @@ const Card = ({ value }) => {
             <span>{el.name}</span>
             <span>:</span>
             <span>{el.category}</span>
+            <div className={`personName ${el.isOlder ? "isolder" : ""}`}>
+              {el.name}
+            </div>
           </div>
         ))}
       </div>

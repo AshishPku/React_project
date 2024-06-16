@@ -10,17 +10,52 @@
   font-weight: 700;
   font-size: larger;
 }
-.card {
-  height: 90vh;
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
-}
-.personName {
-  width: 100%;
+.steps {
+  padding: 20px 0;
   background-color: pink;
-  color: blue;
-  font-size: 30px;
+  width: 100%;
+  text-align: center;
 }
-.isolder {
-  color: red;
+.numbers {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 120px;
+}
+.num {
+  border-radius: 270px;
+  background-color: white;
+  color: blue;
+  border: 2px solid blue;
+  padding: 15px;
+}
+.active {
+  background-color: red;
+  color: white;
+  font-weight: bold;
+}
+.message {
+  border: 2px solid black;
+  padding: 30px;
+  text-align: center;
+  margin: 0 200px;
+  border-radius: 50px;
+  background-color: white;
+}
+.button {
+  display: flex;
+  align-content: center;
+  justify-content: space-evenly;
+  margin: 50px 0;
+}
+.button button {
+  padding: 8px;
+  background: #0505ff57;
+  color: white;
+  font-weight: bold;
+  border: 2px solid #0040ffd6;
+  border-radius: 16px;
+}
+.button button:hover {
+  background-color: #0505ff32;
 }

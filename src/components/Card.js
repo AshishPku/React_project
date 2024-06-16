@@ -1,29 +1,28 @@
 import React from "react";
-import img from "./../assets/images/sri-chaitnaya.jpg";
-const Card = ({ value }) => {
-  const len = 1;
-
+const data = [
+  "Job 1 is amazing but it's hard to crack,🙋",
+  "Job 2 is standard but it's can be crack.🙋‍♂️",
+  "Job 3 is good can be cracked.🙋‍♂️",
+];
+const Card = () => {
+  var step = 1;
+  const handlePrevious = () => {
+    alert("previous");
+  };
+  const handleNext = () => {
+    alert("Next");
+  };
   return (
-    <div>
-      <div className="card">
-        {value.map((el) => (
-          <div>
-            <div>{len}</div>
-            <span>{el.name}</span>
-            <span>:</span>
-            <span>{el.category}</span>
-            <div className={`personName ${el.isOlder ? "isolder" : ""}`}>
-              {el.name}
-            </div>
-          </div>
-        ))}
+    <div className="steps">
+      <div className="numbers">
+        <div className={`num ${step >= 1 ? "active" : ""}`}>1</div>
+        <div className={`num ${step >= 2 ? "active" : ""}`}>2</div>
+        <div className={`num ${step >= 3 ? "active" : ""}`}>3</div>
       </div>
-      <div>
-        {len === 0 ? (
-          <p>Conditions true is applied</p>
-        ) : (
-          <p>false condition is applied</p>
-        )}
+      <p className="message">{data[step - 1]}</p>
+      <div className="button">
+        <button onClick={handlePrevious}>Previous</button>
+        <button onClick={handleNext}>Next</button>
       </div>
     </div>
   );

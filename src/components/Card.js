@@ -8,15 +8,22 @@ const Card = () => {
   const [step, set] = useState(0);
   const [isOpen, setOpen] = useState(true);
   const handlePrevious = () => {
-    if (step > 0) set(step - 1);
+    if (step > 0) {
+      set((s) => {
+        return s - 1;
+      });
+    }
   };
   const handleNext = () => {
-    if (step < 2) set(step + 1);
+    if (step < 2)
+      set((s) => {
+        return s + 1;
+      });
   };
   return (
     <div>
-      <div className="disapper" onClick={() => setOpen(!isOpen)}>
-        &times;
+      <div className="disapper" onClick={() => setOpen((x) => !x)}>
+        &Theta;
       </div>
       {isOpen && (
         <div className="steps">

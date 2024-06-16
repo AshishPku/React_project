@@ -18,7 +18,7 @@
 }
 .numbers {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 40px 120px;
 }
@@ -69,4 +69,41 @@
 .disapper:hover {
   background-color: rgba(0, 255, 255, 0.4);
   cursor: pointer;
+}
+.card {
+  border-radius: 20px;
+  height: auto;
+}
+.tour-name {
+  border-radius: 20px;
+}
+.Sum {
+  padding: 20px 0;
+}
+.img-container {
+  display: flex;
+}
+.img {
+  height: 200px;
+  border-radius: 18px;
+}
+.others {
+  padding: 20px 145px;
+}
+ul {
+  text-decoration: none;
+}
+li {
+  padding: 10px 0px;
+}
+.tour-name {
+  color: rgb(0, 255, 81);
+  font-size: 60px;
+  font-weight: 600;
+  font-family: "Times New Roman", Times, serif;
+}
+.price {
+  font-size: 30px;
+  font-weight: 900;
+  color: red;
 }

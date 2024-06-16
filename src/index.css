@@ -59,3 +59,14 @@
 .button button:hover {
   background-color: #0505ff32;
 }
+.disapper {
+  border: 2px solid white;
+  margin: 0 500px;
+  background-color: aqua;
+  border-radius: 20px;
+  text-align: center;
+}
+.disapper:hover {
+  background-color: rgba(0, 255, 255, 0.4);
+  cursor: pointer;
+}

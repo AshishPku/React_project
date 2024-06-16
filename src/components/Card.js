@@ -6,36 +6,32 @@ const data = [
 ];
 const Card = () => {
   const [step, set] = useState(0);
+  const [isOpen, setOpen] = useState(true);
   const handlePrevious = () => {
-    set((step) => {
-      if (step > 0) {
-        return step - 1;
-      } else {
-        return 0;
-      }
-    });
+    if (step > 0) set(step - 1);
   };
   const handleNext = () => {
-    set((step) => {
-      if (step < 2) {
-        return step + 1;
-      } else {
-        return 2;
-      }
-    });
+    if (step < 2) set(step + 1);
   };
   return (
-    <div className="steps">
-      <div className="numbers">
-        <div className={`num ${step >= 0 ? "active" : ""}`}>1</div>
-        <div className={`num ${step >= 1 ? "active" : ""}`}>2</div>
-        <div className={`num ${step >= 2 ? "active" : ""}`}>3</div>
+    <div>
+      <div className="disapper" onClick={() => setOpen(!isOpen)}>
+        &times;
       </div>
-      <p className="message">{data[step]}</p>
-      <div className="button">
-        <button onClick={handlePrevious}>Previous</button>
-        <button onClick={handleNext}>Next</button>
-      </div>
+      {isOpen && (
+        <div className="steps">
+          <div className="numbers">
+            <div className={`num ${step >= 0 ? "active" : ""}`}>1</div>
+            <div className={`num ${step >= 1 ? "active" : ""}`}>2</div>
+            <div className={`num ${step >= 2 ? "active" : ""}`}>3</div>
+          </div>
+          <p className="message">{data[step]}</p>
+          <div className="button">
+            <button onClick={handlePrevious}>Previous</button>
+            <button onClick={handleNext}>Next</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

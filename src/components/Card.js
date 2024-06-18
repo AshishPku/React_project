@@ -7,10 +7,10 @@ const initialItems = [
   { id: "5", description: "thing5", isPacked: false, quantity: 7 },
   { id: "6", description: "thing6", isPacked: true, quantity: 3 },
 ];
-const Card = () => {
+const Card = ({ items }) => {
   return (
     <ul className="card">
-      {initialItems.map((items) => {
+      {items.map((items) => {
         return (
           <div className="item">
             <li id={items.id}>{items.description}</li>

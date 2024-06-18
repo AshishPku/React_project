@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 let data = [];
-const Form = () => {
+const Form = ({ onAddingItem }) => {
   const [description, setDescription] = useState("");
   const [quantity, setQuantity] = useState(1);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!description) return;
@@ -12,6 +13,7 @@ const Form = () => {
       isPacked: false,
       id: Date.now(),
     };
+    onAddingItem(newItem);
     setDescription("");
     setQuantity(1);
   };

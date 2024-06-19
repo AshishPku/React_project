@@ -24,8 +24,11 @@
   font-size: 30px;
   border: 2px solid red;
   height: 70vh;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 10px;
+  row-gap: 10px;
+  padding: 10px;
 }
 .stats {
   border: 2px solid blue;
@@ -53,6 +56,16 @@
 }
 .cross {
   text-decoration: line-through;
+  text-decoration-color: red;
+  text-decoration-thickness: 6px;
+}
+.item {
+  border: 2px solid red;
+  border-radius: 20px;
+  padding: 10px 90px;
+  font-size: 30px;
+  color: #25b4fa;
+  font-weight: 700;
 }
 .item button {
   border: none;
@@ -63,10 +76,14 @@
 .item button:hover {
   color: rgba(255, 0, 0, 0.7);
 }
-input {
+.form input {
   border: 2px solid blue;
   padding: 10px 40px;
   border-radius: 50px;
   font-weight: 700;
   color: #3116ee;
+}
+.checktype {
+  transform: scale(2.5);
+  margin-right: 15px;
 }

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-let data = [];
 const Form = ({ onAddingItem }) => {
   const [description, setDescription] = useState("");
   const [quantity, setQuantity] = useState(1);
@@ -44,16 +43,6 @@ const Form = ({ onAddingItem }) => {
         />
         <button className="button">ADD</button>
       </form>
-      <div>
-        {data.map((e) => {
-          return (
-            <div>
-              <p>{e.description}</p>
-              <p>{e.quantity}</p>
-            </div>
-          );
-        })}
-      </div>
     </>
   );
 };

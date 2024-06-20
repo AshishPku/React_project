@@ -87,3 +87,29 @@
   transform: scale(2.5);
   margin-right: 15px;
 }
+.SortingItems {
+  display: flex;
+  border: 2px solid black;
+  width: 100%;
+  height: 40px;
+  background-color: aqua;
+  justify-content: space-evenly;
+}
+.sortClass {
+  height: 40px;
+  width: 300px;
+  text-align: center;
+  font-weight: 700;
+  background-color: #c305f89c;
+  color: white;
+  border-radius: 20px;
+}
+.EraseList {
+  height: 40px;
+  width: 300px;
+  text-align: center;
+  font-weight: 700;
+  background-color: #c305f89c;
+  color: white;
+  border-radius: 20px;
+}

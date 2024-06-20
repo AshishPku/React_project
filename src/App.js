@@ -4,15 +4,24 @@ import Form from "./components/Form";
 import Card from "./components/Card";
 import Stats from "./components/Stats";
 const initialItems = [
-  { id: "1", description: "thing1", isPacked: false, quantity: 3 },
-  { id: "2", description: "thing2", isPacked: false, quantity: 6 },
-  { id: "3", description: "thing3", isPacked: false, quantity: 5 },
-  { id: "4", description: "thing4", isPacked: false, quantity: 1 },
-  { id: "5", description: "thing5", isPacked: false, quantity: 7 },
-  { id: "6", description: "thing6", isPacked: false, quantity: 3 },
+  { id: "1", description: "Food", isPacked: false, quantity: 3 },
+  { id: "2", description: "Shocks", isPacked: false, quantity: 6 },
+  {
+    id: "3",
+    description: "Toothpaste and Brush",
+    isPacked: false,
+    quantity: 5,
+  },
+  { id: "4", description: "Soap", isPacked: false, quantity: 1 },
+  { id: "5", description: "Bag", isPacked: false, quantity: 7 },
+  { id: "6", description: "Jacket", isPacked: false, quantity: 3 },
 ];
 const App = () => {
   const [items, setItem] = useState(initialItems);
+  const deleteAll = () => {
+    const confirm = window.confirm("Are you sure to clear the list?");
+    if (confirm) setItem((items) => []);
+  };
   const addnewItem = (item) => {
     setItem((items) => [...items, item]);
   };
@@ -30,11 +39,17 @@ const App = () => {
       )
     );
   };
+
   return (
     <>
       <Header />
       <Form onAddingItem={addnewItem} />
-      <Card items={items} deleteIterm={deleteAItem} onchecking={onCheck} />
+      <Card
+        items={items}
+        deleteIterm={deleteAItem}
+        onchecking={onCheck}
+        deleteAll={deleteAll}
+      />
       <Stats items={items} />
     </>
   );

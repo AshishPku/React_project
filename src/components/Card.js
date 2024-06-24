@@ -17,7 +17,7 @@ const Card = ({ data, onSelection, selectedFriend }) => {
               <h3 className="friend-name">{e.name}</h3>
               {e.balance < 0 && (
                 <p className="info red">
-                  You owe {e.name} {e.balance}
+                  You owe {e.name} {-e.balance}
                 </p>
               )}
               {e.balance > 0 && (

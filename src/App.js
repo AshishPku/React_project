@@ -106,10 +106,15 @@ const App = () => {
     setSelectedFriend((curr) => (curr?.id === friend.id ? null : friend));
     setFormAddFriend(false);
   };
-  const handleSplitBill = (friend) => {
-    setAllFriend((allfriend) => {
-      allfriend.filter();
-    });
+  const handleSplitBill = (value) => {
+    console.log(value);
+    setAllFriend((allfriend) =>
+      allfriend.map((e) =>
+        e.id === selectedFriend?.id
+          ? { ...e, balance: Number(e.balance) + value }
+          : e
+      )
+    );
   };
   return (
     <>

@@ -6,8 +6,10 @@ const FormSplitBill = ({ selectedFriend, handleSplitBill }) => {
   const [billPayment, setBillPayment] = useState(true);
   const handleBill = (e) => {
     e.preventDefault();
-    const data = { billValue, YourExpense, billPayment };
-    //handleSplitBill(data);
+    if (!billValue) return;
+    handleSplitBill(
+      billPayment ? YourExpense - billValue : Number(YourExpense)
+    );
   };
   return (
     <div className="form-split">
@@ -18,7 +20,7 @@ const FormSplitBill = ({ selectedFriend, handleSplitBill }) => {
           <input
             type="number"
             value={billValue}
-            onChange={(e) => setBillValue(e.target.value)}
+            onChange={(e) => setBillValue(Number(e.target.value))}
           />
         </div>
         <div>
@@ -26,7 +28,15 @@ const FormSplitBill = ({ selectedFriend, handleSplitBill }) => {
           <input
             type="number"
             value={YourExpense}
-            onChange={(e) => setYourExpense(e.target.value)}
+            onChange={(e) =>
+              setYourExpense(
+                Number(e.target.value) > billValue
+                  ? YourExpense
+                  : e.target.value < 0
+                  ? 0
+                  : e.target.value
+              )
+            }
           />
         </div>
         <div>

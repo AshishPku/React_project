@@ -12,16 +12,13 @@
   padding: 9px 0px;
 }
 .friends-box {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   padding: 20px;
 }
 .each-friend {
   justify-content: space-around;
-  margin: 5px 10px;
+  margin-right: 800px;
   padding: 10px 10px;
   border: 1px solid black;
-  width: auto;
   display: flex;
   border-radius: 20px;
 }
@@ -31,8 +28,6 @@
 }
 .friend-name {
   color: #a509ec;
-}
-.info {
 }
 .red {
   color: red;
@@ -62,6 +57,7 @@
   font-size: 36px;
   background-color: #ffc77f8c;
   width: 700px;
+  transform: translate(676px, -515px);
 }
 input {
   border: none;
@@ -78,4 +74,5 @@ input {
   font-size: 36px;
   background-color: #ffc77f8c;
   width: 700px;
+  transform: translate(678px, -615px);
 }

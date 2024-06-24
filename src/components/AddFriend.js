@@ -7,7 +7,7 @@ const AddFriend = ({ handlenewFriend }) => {
     e.preventDefault();
     if (!name) return;
     if (!image) return;
-    const id = crypto.randomUUID();
+    const id = crypto.randomUUID;
     const data = {
       id: id,
       name: name,

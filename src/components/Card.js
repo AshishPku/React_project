@@ -1,11 +1,17 @@
 import React from "react";
 import Button from "./Button";
-const Card = ({ data }) => {
+const Card = ({ data, onSelection, selectedFriend }) => {
   return (
     <ul className="friends-box">
       {data.map((e) => {
+        var isSelected;
+        if (!selectedFriend) {
+          isSelected = false;
+        } else {
+          isSelected = e.id === selectedFriend.id;
+        }
         return (
-          <li className="each-friend">
+          <li id={e.id} className="each-friend">
             <img className="friend-img" src={e.image} alt={e.image} />
             <div>
               <h3 className="friend-name">{e.name}</h3>
@@ -23,7 +29,9 @@ const Card = ({ data }) => {
                 <p className="info neutral">You {e.name} are even</p>
               )}
             </div>
-            <Button>Select</Button>
+            <Button onClick={() => onSelection(e)}>
+              {isSelected ? "Close" : "Select"}
+            </Button>
           </li>
         );
       })}

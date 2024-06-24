@@ -91,19 +91,44 @@ const data = [
   // },
 ];
 const App = () => {
-  const [formAddFriend, setFormAddFriend] = useState(true);
+  const [formAddFriend, setFormAddFriend] = useState(false);
+  const [allfriend, setAllFriend] = useState(data);
   const handleAddFriend = () => {
     setFormAddFriend((x) => !x);
+  };
+  const handlenewFriend = (newFriend) => {
+    setAllFriend((allfriend) => [...allfriend, newFriend]);
+    setFormAddFriend(false);
+  };
+
+  const [selectedFriend, setSelectedFriend] = useState(null);
+  const handleSelection = (friend) => {
+    setSelectedFriend((curr) => (curr?.id === friend.id ? null : friend));
+    setFormAddFriend(false);
+  };
+  const handleSplitBill = (friend) => {
+    setAllFriend((allfriend) => {
+      allfriend.filter();
+    });
   };
   return (
     <>
       <Header />
-      <Card data={data} />
-      {formAddFriend && <AddFriend />}
+      <Card
+        data={allfriend}
+        onSelection={handleSelection}
+        selectedFriend={selectedFriend}
+      />
+      {formAddFriend && <AddFriend handlenewFriend={handlenewFriend} />}
       <Button onClick={handleAddFriend}>
         {formAddFriend === false ? "Add Friend" : "Close"}
       </Button>
-      <FormSplitBill friend={data[0]} />
+      {selectedFriend && (
+        <FormSplitBill
+          selectedFriend={selectedFriend}
+          handleSplitBill={handleSplitBill}
+        />
+      )}
     </>
   );
 };

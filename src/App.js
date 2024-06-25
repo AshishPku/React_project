@@ -1,140 +1,70 @@
-import React, { useState } from "react";
-import Header from "./components/Header";
-import Card from "./components/Card";
-import AddFriend from "./components/AddFriend";
-import Button from "./components/Button";
-import FormSplitBill from "./components/FormSplitBill";
-const data = [
+import React from "react";
+import NavBar from "./components/NavBar";
+import Main from "./components/Main";
+import Logo from "./components/Logo";
+import Search from "./components/Search";
+import NumResults from "./components/NumResults";
+import ListBox from "./components/ListBox";
+import WatchedBox from "./components/WatchedBox";
+const tempMovieData = [
   {
-    id: 0,
-    name: "Ashish",
-    image:
-      "https://images.pexels.com/photos/3785104/pexels-photo-3785104.jpeg?auto=compress&cs=tinysrgb&w=300",
-    balance: 0,
+    imdbID: "tt1375666",
+    Title: "Inception",
+    Year: "2010",
+    Poster:
+      "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg",
   },
   {
-    id: 2,
-    name: "Kartik",
-    image:
-      "https://images.pexels.com/photos/2955376/pexels-photo-2955376.jpeg?auto=compress&cs=tinysrgb&w=300",
-    balance: -120,
+    imdbID: "tt0133093",
+    Title: "The Matrix",
+    Year: "1999",
+    Poster:
+      "https://m.media-amazon.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg",
   },
   {
-    id: 3,
-    name: "Aman",
-    image:
-      "https://images.pexels.com/photos/769772/pexels-photo-769772.jpeg?auto=compress&cs=tinysrgb&w=300",
-    balance: 140,
+    imdbID: "tt6751668",
+    Title: "Parasite",
+    Year: "2019",
+    Poster:
+      "https://m.media-amazon.com/images/M/MV5BYWZjMjk3ZTItODQ2ZC00NTY5LWE0ZDYtZTI3MjcwN2Q5NTVkXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_SX300.jpg",
+  },
+];
+
+const tempWatchedData = [
+  {
+    imdbID: "tt1375666",
+    Title: "Inception",
+    Year: "2010",
+    Poster:
+      "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg",
+    runtime: 148,
+    imdbRating: 8.8,
+    userRating: 10,
   },
   {
-    id: 4,
-    name: "Naveen",
-    image:
-      "https://images.pexels.com/photos/914472/pexels-photo-914472.jpeg?auto=compress&cs=tinysrgb&w=300",
-    balance: 500,
+    imdbID: "tt0088763",
+    Title: "Back to the Future",
+    Year: "1985",
+    Poster:
+      "https://m.media-amazon.com/images/M/MV5BZmU0M2Y1OGUtZjIxNi00ZjBkLTg1MjgtOWIyNThiZWIwYjRiXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+    runtime: 116,
+    imdbRating: 8.5,
+    userRating: 9,
   },
-  // {
-  //   id: 5,
-  //   name: "Naresh",
-  //   image:
-  //     "https://images.pexels.com/photos/1452128/pexels-photo-1452128.jpeg?auto=compress&cs=tinysrgb&w=300",
-  //   balance: 600,
-  // },
-  // {
-  //   id: 6,
-  //   name: "Abhishek",
-  //   image:
-  //     "https://images.pexels.com/photos/632700/pexels-photo-632700.jpeg?auto=compress&cs=tinysrgb&w=300",
-  //   balance: 754,
-  // },
-  // {
-  //   id: 0,
-  //   name: "Ankush",
-  //   image:
-  //     "https://images.pexels.com/photos/452558/pexels-photo-452558.jpeg?auto=compress&cs=tinysrgb&w=300",
-  //   balance: 100,
-  // },
-  // {
-  //   id: 8,
-  //   name: "Arvind",
-  //   image:
-  //     "https://images.pexels.com/photos/769730/pexels-photo-769730.jpeg?auto=compress&cs=tinysrgb&w=300",
-  //   balance: 8,
-  // },
-  // {
-  //   id: 9,
-  //   name: "Kunal",
-  //   image:
-  //     "https://images.pexels.com/photos/977796/pexels-photo-977796.jpeg?auto=compress&cs=tinysrgb&w=300",
-  //   balance: 57,
-  // },
-  // {
-  //   id: 10,
-  //   name: "Om",
-  //   image:
-  //     "https://images.pexels.com/photos/974266/pexels-photo-974266.jpeg?auto=compress&cs=tinysrgb&w=300",
-  //   balance: 345,
-  // },
-  // {
-  //   id: 11,
-  //   name: "Yuvraj",
-  //   image:
-  //     "https://images.pexels.com/photos/2955376/pexels-photo-2955376.jpeg?auto=compress&cs=tinysrgb&w=300",
-  //   balance: 75,
-  // },
-  // {
-  //   id: 12,
-  //   name: "Prince",
-  //   image:
-  //     "https://images.pexels.com/photos/2955376/pexels-photo-2955376.jpeg?auto=compress&cs=tinysrgb&w=300",
-  //   balance: 45,
-  // },
 ];
 const App = () => {
-  const [formAddFriend, setFormAddFriend] = useState(false);
-  const [allfriend, setAllFriend] = useState(data);
-  const handleAddFriend = () => {
-    setFormAddFriend((x) => !x);
-  };
-  const handlenewFriend = (newFriend) => {
-    setAllFriend((allfriend) => [...allfriend, newFriend]);
-    setFormAddFriend(false);
-  };
-
-  const [selectedFriend, setSelectedFriend] = useState(null);
-  const handleSelection = (friend) => {
-    setSelectedFriend((curr) => (curr?.id === friend.id ? null : friend));
-    setFormAddFriend(false);
-  };
-  const handleSplitBill = (value) => {
-    console.log(value);
-    setAllFriend((allfriend) =>
-      allfriend.map((e) =>
-        e.id === selectedFriend?.id
-          ? { ...e, balance: Number(e.balance) + value }
-          : e
-      )
-    );
-  };
   return (
-    <>
-      <Header />
-      <Card
-        data={allfriend}
-        onSelection={handleSelection}
-        selectedFriend={selectedFriend}
-      />
-      {formAddFriend && <AddFriend handlenewFriend={handlenewFriend} />}
-      <Button onClick={handleAddFriend}>
-        {formAddFriend === false ? "Add Friend" : "Close"}
-      </Button>
-      {selectedFriend && (
-        <FormSplitBill
-          selectedFriend={selectedFriend}
-          handleSplitBill={handleSplitBill}
-        />
-      )}
-    </>
+    <div>
+      <NavBar>
+        <Logo />
+        <Search />
+        <NumResults movie={tempMovieData} />
+      </NavBar>
+      <Main>
+        <ListBox movie={tempMovieData} />
+        <WatchedBox />
+      </Main>
+    </div>
   );
 };
 

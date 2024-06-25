@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import NavBar from "./components/NavBar";
 import Main from "./components/Main";
 import Logo from "./components/Logo";
 import Search from "./components/Search";
 import NumResults from "./components/NumResults";
-import ListBox from "./components/ListBox";
-import WatchedBox from "./components/WatchedBox";
+import Box from "./components/Box";
+import WatchedSummary from "./components/WatchedSummary";
+import WatchedMovieList from "./components/WatchedMovieList";
+import MovieList from "./components/MovieList";
 const tempMovieData = [
   {
     imdbID: "tt1375666",
@@ -52,17 +54,28 @@ const tempWatchedData = [
     userRating: 9,
   },
 ];
+const KEY = "a55b26e";
 const App = () => {
+  const [movies, setMovies] = useState([]);
+  const [WatchedList, setWatchedList] = useState([]);
+  fetch(`http://www.omdbapi.com/?apikey=${KEY}&s=interstellar`).then((res) =>
+    res.json().then((data) => setMovies(data.Search))
+  );
   return (
     <div>
       <NavBar>
         <Logo />
         <Search />
-        <NumResults movie={tempMovieData} />
+        <NumResults movie={movies} />
       </NavBar>
       <Main>
-        <ListBox movie={tempMovieData} />
-        <WatchedBox />
+        <Box>
+          <MovieList movie={WatchedList} />
+        </Box>
+        <Box>
+          <WatchedSummary />
+          <WatchedMovieList watchedMovie={tempWatchedData} />
+        </Box>
       </Main>
     </div>
   );

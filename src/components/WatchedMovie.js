@@ -1,22 +1,22 @@
 import React from "react";
 
-const WatchedMovie = () => {
+const WatchedMovie = ({ movie }) => {
   return (
     <li>
-      <img />
-      <h3></h3>
+      <img src={movie.Poster} alt="movie" className="movie-img" />
+      <h3>{movie.Title}</h3>
       <div>
         <p>
-          <span>star</span>
-          <span>Movie.imbdRating</span>
+          <span>⭐</span>
+          <span>{movie.imdbRating}</span>
         </p>
         <p>
-          <span>star</span>
-          <span>Movie.userRating</span>
+          <span>✨</span>
+          <span>{movie.userRating}</span>
         </p>
         <p>
           <span>Timer</span>
-          <span>Movie.runtime</span>
+          <span>{movie.runtime}</span>
         </p>
       </div>
     </li>

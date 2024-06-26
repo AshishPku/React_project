@@ -65,11 +65,26 @@
   padding: 10px 5px;
 }
 .box {
+  margin: 5px;
   border: 2px solid red;
   height: auto;
+  padding: 5px 10px;
+}
+.btn-box {
+  border: 2px solid blue;
+  display: flex;
+  justify-content: space-between;
 }
 .btn-toggle {
-  transform: translateX(746px);
+  font-size: 40px;
+  width: 40px;
+  border: none;
+  background-color: #833dff;
+  color: white;
+  font-weight: bolder;
+}
+.btn-toggle:hover {
+  background-color: #843dffae;
 }
 .list {
 }
@@ -77,11 +92,17 @@
   height: 200px;
 }
 .movie-element {
+  margin: 10px 20px;
   border: 2px solid black;
   padding: 20px;
+}
+li {
+  list-style: none;
 }
 @media (max-width: 600px) {
   .main {
     display: inline;
+  }
+  .btn-toggle {
   }
 }

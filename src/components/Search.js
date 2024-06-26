@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 
-const Search = () => {
+const Search = ({ query, queryhandle }) => {
   return (
-    <input className="search" type="text" placeholder="Search movie..."></input>
+    <input
+      className="search"
+      value={query}
+      type="text"
+      placeholder="Search movie..."
+      onChange={(e) => queryhandle(e.target.value)}
+    ></input>
   );
 };
 

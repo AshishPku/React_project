@@ -4,12 +4,15 @@ const DivStarStyle = {
   display: "flex",
   gap: "16px",
   alignItems: "center",
+  borderRadius: "10px",
+  padding: "10px 0px",
+  boxShadow: "1px 1px 8px",
 };
 const DivStarStyle_inner = {
   display: "flex",
   gap: "4px",
 };
-const StarRating = ({ maxRating, color = "#fcc419", size = 48 }) => {
+const StarRating = ({ maxRating, color = "#fcc419", size = 48, SetRating }) => {
   const [rating, setRating] = useState(0);
   const [temprating, setTempRating] = useState(0);
   return (
@@ -21,7 +24,10 @@ const StarRating = ({ maxRating, color = "#fcc419", size = 48 }) => {
             onTempRateOut={() => setTempRating(0)}
             key={i}
             full={temprating ? temprating >= i + 1 : rating >= i + 1}
-            onRate={() => setRating(i + 1)}
+            onRate={() => {
+              setRating(i + 1);
+              SetRating(i + 1);
+            }}
             color={color}
             size={size}
           />

@@ -24,11 +24,11 @@
   color: black;
 }
 .search {
-  height: 40px;
-  width: 400px;
+  height: 35px;
+  width: 500px;
   border: none;
   text-align: center;
-  border-radius: 32px;
+  border-radius: 10px;
   margin: 13px 0px;
 }
 .results {
@@ -66,18 +66,17 @@
 }
 .box {
   margin: 5px;
-  border: 2px solid red;
   height: auto;
   padding: 5px 10px;
 }
 .btn-box {
-  border: 2px solid blue;
   display: flex;
   justify-content: space-between;
 }
 .btn-toggle {
-  font-size: 40px;
-  width: 40px;
+  border-radius: 20px;
+  font-size: 30px;
+  width: 30px;
   border: none;
   background-color: #833dff;
   color: white;
@@ -86,15 +85,18 @@
 .btn-toggle:hover {
   background-color: #843dffae;
 }
-.list {
-}
 .movie-img {
-  height: 200px;
+  height: 100px;
+}
+.movie-img1 {
+  height: 300px;
+  margin-left: 10px;
 }
 .movie-element {
-  margin: 10px 20px;
-  border: 2px solid black;
-  padding: 20px;
+  margin: 10px 0px;
+  box-shadow: 1px 1px 8px;
+  padding: 10px 20px;
+  border-radius: 20px;
 }
 li {
   list-style: none;
@@ -104,5 +106,88 @@ li {
     display: inline;
   }
   .btn-toggle {
+  }
+}
+.movie-detail-container p {
+  margin: 10px 2px;
+}
+.btn1 {
+  background-color: #833dff;
+  color: white;
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 11px;
+}
+.btn1:hover {
+  background-color: #843dffde;
+}
+.btn-add {
+  padding: 10px;
+  width: 300px;
+  margin: 10px 172px;
+  background-color: #833dff;
+  color: white;
+  font-weight: bold;
+  border-radius: 12px;
+  border: none;
+}
+.btn-add:hover {
+  background-color: #843dffd0;
+}
+@media (max-width: 600px) {
+  .btn-add {
+    width: 200px;
+    margin: 10px 50px;
+  }
+}
+.watched-movie-container {
+  justify-content: space-evenly;
+  display: flex;
+}
+.watched-container {
+  margin: -10px 25px;
+}
+.watched-movie-detail {
+  margin: 5px 0px;
+  padding: 10px;
+  font-size: 20px;
+  box-shadow: 1px 1px 3px;
+  background-color: #833dff;
+  color: white;
+  border-radius: 20px;
+}
+.btn-cross {
+  border-radius: 18px;
+  width: 25px;
+  height: 23px;
+  margin: 38px -20px;
+  background-color: red;
+  border: none;
+}
+.btn-cross:hover {
+  scale: 1.2;
+}
+.Loadingstyle {
+  font-size: 40px;
+  font-weight: bold;
+}
+.dot {
+  animation: dot-animation 1.4s infinite both;
+}
+.dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+@keyframes dot-animation {
+  0%,
+  80%,
+  100% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
   }
 }

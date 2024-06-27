@@ -1,24 +1,32 @@
 import React from "react";
 
-const WatchedMovie = ({ movie }) => {
+const WatchedMovie = ({ movie, handleDeleteWatchedList }) => {
   return (
-    <li>
+    <li className="movie-element watched-movie-container">
       <img src={movie.Poster} alt="movie" className="movie-img" />
-      <h3>{movie.Title}</h3>
-      <div>
+      <div className="watched-container">
+        <h3>{movie.Title}</h3>
         <p>
-          <span>⭐</span>
-          <span>{movie.imdbRating}</span>
+          <span>⭐ </span>
+          <span> {movie.imdbRating}</span>
         </p>
         <p>
-          <span>✨</span>
-          <span>{movie.userRating}</span>
+          <span>✨ </span>
+          <span> {movie.userRating}</span>
         </p>
         <p>
-          <span>Timer</span>
-          <span>{movie.runtime}</span>
+          <span>Timer: </span>
+          <span> {movie.Runtime}</span>
         </p>
       </div>
+      <button
+        onClick={() => {
+          handleDeleteWatchedList(movie.imdbID);
+        }}
+        className="btn-cross"
+      >
+        &#10007;
+      </button>
     </li>
   );
 };

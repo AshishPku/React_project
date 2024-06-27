@@ -4,7 +4,7 @@ const Box = ({ children }) => {
   return (
     <div className="box">
       <div className="btn-box">
-        <p></p>
+        <p>Movies:</p>
         <button
           className="btn-toggle"
           onClick={() => setIsOpen((open) => !open)}

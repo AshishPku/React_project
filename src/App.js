@@ -16,7 +16,7 @@ const App = () => {
   const [WatchedList, setWatchedList] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
-  const [query, setQuery] = useState("love");
+  const [query, setQuery] = useState("interstellar");
   /*
   useEffect(function () {
     console.log("After Initial Render.");

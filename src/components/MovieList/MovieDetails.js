@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import StarRating from "./StarRating";
-import Loading from "./Loading";
+import Loading from "../ErrorM/Loading";
 const KEY = "a55b26e";
 const MovieDetails = ({
   selectedID,

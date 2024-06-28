@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
-import NavBar from "./components/NavBar";
+import NavBar from "./components/Header/NavBar";
 import Main from "./components/Main";
-import Logo from "./components/Logo";
-import Search from "./components/Search";
-import NumResults from "./components/NumResults";
+import Logo from "./components/Header/Logo";
+import Search from "./components/Header/Search";
+import NumResults from "./components/Header/NumResults";
 import Box from "./components/Box";
-import WatchedSummary from "./components/WatchedSummary";
-import WatchedMovieList from "./components/WatchedMovieList";
-import MovieList from "./components/MovieList";
-import ErrorMessage from "./components/ErrorMessage";
-import Loading from "./components/Loading";
+import WatchedSummary from "./components/WatchedList/WatchedSummary";
+import WatchedMovieList from "./components/WatchedList/WatchedMovieList";
+import MovieList from "./components/MovieList/MovieList";
+import ErrorMessage from "./components/ErrorM/ErrorMessage";
+import Loading from "./components/ErrorM/Loading";
 const KEY = "a55b26e";
 const App = () => {
   const [movies, setMovies] = useState([]);
@@ -38,6 +38,7 @@ const App = () => {
   const handleDeleteWatchedList = (id) => {
     setWatchedList((WatchedList) => WatchedList.filter((e) => e.imdbID !== id));
   };
+
   useEffect(() => {
     const controller = new AbortController();
     async function FetchData() {

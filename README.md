@@ -1,70 +1,22 @@
-# Getting Started with Create React App
+# Movie Search Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Project Link](https://fabmovie.vercel.app)
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+This is a movie search project where you can search any project,open details of a particular movie and then add some rating to it and finally add it to the moviewatched list.
+You can remove the movie from the watchedlist also.
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### After opening the website you will find the following interface:-
+<img src="https://raw.githubusercontent.com/AshishPku/Fabmovie/gitinit_ashish/Screenshot%20from%202024-07-27%2018-03-54.png"/>
+<img src="https://raw.githubusercontent.com/AshishPku/Fabmovie/gitinit_ashish/Screenshot%20from%202024-07-27%2018-04-18.png"/>
+<img src="https://raw.githubusercontent.com/AshishPku/Fabmovie/gitinit_ashish/Screenshot%20from%202024-07-27%2018-04-42.png"/>
+<img src="https://raw.githubusercontent.com/AshishPku/Fabmovie/gitinit_ashish/Screenshot%20from%202024-07-27%2018-04-51.png"/>
+<img src="https://raw.githubusercontent.com/AshishPku/Fabmovie/gitinit_ashish/Screenshot%20from%202024-07-27%2018-04-55.png"/>
+### `To clone the project`
+<ul>
+  <li>Open your terminal or cmd and make a directory name as movie_app then go inside the folder and run the command in the terminal:- git clone 
+https://github.com/AshishPku/Fabmovie.git</li>
+<li>After cloning the project you can install all the dependencies required using command npm install</li>
+  <li>Finally you can run the project in your local machine using the command npm start.</li>
+</ul>
